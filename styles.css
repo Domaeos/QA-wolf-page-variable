@@ -1,0 +1,140 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(137, 146, 163);
+    -webkit-transition: .4s;
+    transition: .4s;
+    height: 20px;
+    border-radius: 34px;
+}
+
+/* The ball */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 1px;
+    bottom: 1px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: rgb(69, 69, 229);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px rgb(69, 69, 229);
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.replacer-info-text {
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-right: 10px;
+    margin-left: 8px;
+}
+
+.page-replacer-input {
+    background-color: #B9C2CB;
+    border: 1px solid #9AA5B1;
+    border-radius: 20px; /* rounded corners */
+    padding: 8px 14px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.page-replacer-input::placeholder {
+    color: #6B7280;
+}
+
+.page-replacer-input:focus {
+    border-color: #4C5C6A;
+    box-shadow: 0 0 0 2px rgba(76, 92, 106, 0.2);
+}
+
+.page-replacer-input:disabled {
+    background-color: #D3D8DE;
+    color: #7A8188;
+    cursor: not-allowed;
+    opacity: 0.6;
+    border-color: #AAB2BA;
+}
+
+.page-replacer-container {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+.page-replacer-container.visible {
+    height: 40px; /* adjust this to the actual height of your container */
+    opacity: 1;
+}
+
+.validation-message {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #ff3333;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.validation-message.visible {
+    opacity: 1;
+}
+
+.valid-input {
+    border-color: #33cc33 !important;
+    background-color: #f0fff0 !important;
+}
+
+.invalid-input {
+    border-color: #ff3333 !important;
+    background-color: #fff0f0 !important;
+}
